@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://brnevng213u07"]
+
+[ext_resource type="Script" path="res://Games/Pong/Score/PongScore.gd" id="1_62is3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l67xl"]
+font_size = 200
+
+[node name="PongScore" type="Label"]
+offset_right = 114.0
+offset_bottom = 276.0
+text = "0"
+label_settings = SubResource("LabelSettings_l67xl")
+script = ExtResource("1_62is3")

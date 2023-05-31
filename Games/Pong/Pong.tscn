@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7crswvq2c18c"]
+
+[ext_resource type="PackedScene" uid="uid://bawxm2xp4rkrh" path="res://Games/Pong/Player/PongPlayer.tscn" id="1_o8mhc"]
+[ext_resource type="PackedScene" uid="uid://bsj85q87gywd2" path="res://Games/Pong/Ball/PongBall.tscn" id="2_wittd"]
+[ext_resource type="PackedScene" uid="uid://brnevng213u07" path="res://Games/Pong/Score/PongScore.tscn" id="3_4r0ch"]
+
+[node name="Pong" type="Node2D"]
+
+[node name="PongPlayer1" parent="." node_paths=PackedStringArray("scoreKeeper") instance=ExtResource("1_o8mhc")]
+position = Vector2(120, 100)
+speed = 900
+player = 1
+scoreKeeper = NodePath("../PongScore")
+
+[node name="PongPlayer2" parent="." node_paths=PackedStringArray("scoreKeeper") instance=ExtResource("1_o8mhc")]
+position = Vector2(1800, 100)
+scale = Vector2(-1, 1)
+speed = 900
+player = 2
+scoreKeeper = NodePath("../PongScore2")
+
+[node name="PongBall" parent="." node_paths=PackedStringArray("leftPlayer", "rightPlayer") instance=ExtResource("2_wittd")]
+position = Vector2(938, 538)
+startSpeed = 600
+speedIncreasePerHit = 90
+leftPlayer = NodePath("../PongPlayer1")
+rightPlayer = NodePath("../PongPlayer2")
+
+[node name="PongScore" parent="." instance=ExtResource("3_4r0ch")]
+offset_left = 292.0
+offset_top = 2.0
+offset_right = 406.0
+offset_bottom = 278.0
+scoreLimit = 11
+
+[node name="PongScore2" parent="." instance=ExtResource("3_4r0ch")]
+offset_left = 1397.0
+offset_top = -1.0
+offset_right = 1511.0
+offset_bottom = 275.0
+scoreLimit = 11
