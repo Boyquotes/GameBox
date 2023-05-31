@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://cokiw1c8umsyq"]
+
+[ext_resource type="Script" path="res://Menu/MenuController.gd" id="1_vehlg"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vehlg")
+
+[node name="PongStart" type="Button" parent="."]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 45.0
+offset_right = 274.0
+offset_bottom = 133.0
+text = "PONG"
+
+[node name="TetrisStart" type="Button" parent="."]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 47.0
+offset_right = 512.0
+offset_bottom = 135.0
+text = "Tetris"
+
+[connection signal="pressed" from="PongStart" to="." method="_on_pong_start_pressed"]
+[connection signal="pressed" from="TetrisStart" to="." method="_on_tetris_start_pressed"]
